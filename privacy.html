@@ -1,10 +1,84 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Underworld's privacy policy."><title>Privacy · Underworld</title><link rel="stylesheet" href="site.css"><!-- Privacy-friendly analytics by Plausible --><script async src="https://plausible.io/js/pa-GyqHx0YMHl3Pdd7LSScGl.js"></script><script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script></head>
-<body><header><div class="shell topbar"><a class="brand" href="index.html">Underworld</a><nav aria-label="Primary navigation"><a href="terms.html">Terms</a><a aria-current="page" href="privacy.html">Privacy</a></nav></div></header>
-<main class="shell"><p class="eyebrow">Last updated August 21, 2026</p><h1>Your data,<br>without the fog.</h1><p class="lede">Underworld stores the minimum data needed to run a persistent, server-by-server game. We do not read or store your messages.</p><section class="promise"><strong>The short version.</strong> We store Discord IDs and the game state attached to them. We never sell data, run ads, use marketing tracking pixels, or collect message content. We use limited, cookie-free website analytics as described below. You can permanently erase your game data with <code>/forgetme</code>.</section>
-<h2>What we store</h2><table><thead><tr><th>Data</th><th>Why</th></tr></thead><tbody><tr><td>Discord user and server IDs</td><td>To keep game progress separate for each person and server.</td></tr><tr><td>Balances, transaction history, rackets, Heat, streaks and cooldowns</td><td>To make the game work after restarts and prevent duplicate rewards.</td></tr><tr><td>Command outcomes</td><td>To safely replay a Discord command if Discord redelivers it.</td></tr><tr><td>Admin configuration history and an optional audit-channel ID</td><td>To keep server settings accountable and send optional admin notices.</td></tr><tr><td>Server join and removal events</td><td>To measure aggregate installs and retention. This does not track individual players.</td></tr></tbody></table>
-<h2>What we do not store</h2><p>We do not store message content, usernames, nicknames, avatars, email addresses, IP addresses, payment details, or activity outside Underworld commands.</p>
-<h2>Delete your data</h2><p>Run <code>/forgetme</code> in a server with Underworld. Choose either the current server or every server where Underworld holds your data, then confirm the prompt yourself.</p><ul><li>Deletion is immediate and permanent.</li><li>Your balances, transaction history, rackets, Heat, streaks, cooldowns and stored command outcomes are removed together.</li><li>Server settings remain. If you changed a server setting as an admin, the setting history remains but your ID is replaced with an anonymous placeholder.</li></ul><p>If you no longer share a server with Underworld, or need a copy of your data, use the support route below.</p>
-<h2>Retention and security</h2><p>Game data stays until it is deleted. Removing Underworld from a server does not automatically erase its data today. The database and backups must be kept on encrypted storage, and off-box backups must be encrypted before transfer or storage.</p>
-<h2>Sharing and analytics</h2><p>Underworld sends game data to no advertising or data-broker service. It communicates with Discord to run the bot. Local operator metrics contain only aggregate server counts; they never print player IDs or message content.</p><p>Our public website uses Plausible Analytics to measure aggregate page visits and clicks on the “Add Underworld” and the “Join Discord Server” buttons. Plausible does not use cookies or persistent identifiers, does not store raw IP addresses, and does not track people across sites, devices, or days. It receives the page URL, referral source, browser, operating system, device type, and approximate location derived from the IP address before that address is discarded. We never send Discord IDs, game data, or other account identifiers to Plausible. See <a href="https://plausible.io/data-policy">Plausible’s data policy</a>.</p>
-<h2>Support and privacy requests</h2><div class="notice">For support, privacy requests, or a copy of your data, join the <a href="/discord/">Underworld support server</a>.</div></main><footer><div class="shell">Underworld is a fictional game. All currency and rewards are virtual and have no real-world value.</div></footer></body></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Underworld's privacy policy.">
+    <title>Privacy · Underworld</title>
+    <link rel="stylesheet" href="site.css">
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-GyqHx0YMHl3Pdd7LSScGl.js"></script>
+    <script>
+      window.plausible = window.plausible || function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      };
+      window.plausible.init();
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="shell topbar">
+        <a class="brand" href="index.html">Underworld</a>
+        <nav aria-label="Primary navigation">
+          <a href="terms.html">Terms</a>
+          <a aria-current="page" href="privacy.html">Privacy</a>
+        </nav>
+      </div>
+    </header>
+    <main class="shell">
+      <p class="eyebrow">Last updated August 25, 2026</p>
+      <h1>Your data,<br>without the fog.</h1>
+      <p class="lede">Underworld stores the data needed to run a persistent, server-by-server game. We do not store the content of your messages.</p>
+
+      <section class="promise">
+        <strong>The short version.</strong> We store Discord IDs and game state. We do not sell data, run ads, or collect message content. You can erase your game data with <code>/forgetme</code>. Website analytics and the limited operator records described below exist to keep the service running and improving.
+      </section>
+
+      <h2>What Underworld stores</h2>
+      <table>
+        <thead><tr><th>Data</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>Discord user and server IDs</td><td>To keep game progress separate for each person and server.</td></tr>
+          <tr><td>Balances, transaction history, rackets, Heat, streaks and cooldowns</td><td>To make the game work after restarts and prevent duplicate rewards.</td></tr>
+          <tr><td>Command outcomes</td><td>To safely replay a Discord command if Discord redelivers it.</td></tr>
+          <tr><td>Admin configuration history and optional audit-channel ID</td><td>To keep server settings accountable and send optional admin notices.</td></tr>
+          <tr><td>Server join and removal events</td><td>To measure installs and retention. These records are about servers, not individual players.</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Discord messages and operator records</h2>
+      <p>Underworld sends normal game responses to Discord. Those messages can show the current Discord display name of the person using a command. We do not store usernames, nicknames or display names in Underworld's database.</p>
+      <p>If a server enables Underworld's audit channel, configuration notices include the current display name of the administrator who made the change. Those notices are messages in that server's Discord channel, not database records. Deleting your data anonymizes your database audit record, but does not edit or delete messages already retained by Discord in a server's audit channel.</p>
+      <p>Underworld can also send a limited join or removal notice to a private operator channel in the official Underworld server. It may include the server name, server ID, member count when Discord provides it, event type, timestamp and, on a join, the current server owner ID. This channel is restricted to Underworld operators and is used to monitor installs and removals.</p>
+
+      <h2>What we do not store in the game database</h2>
+      <p>We do not store message content, usernames, nicknames, avatars, email addresses, IP addresses, payment details, or activity outside Underworld commands.</p>
+
+      <h2>Delete your data</h2>
+      <p>Run <code>/forgetme</code> in a server with Underworld. Choose either the current server or every server where Underworld holds your game data, then confirm the prompt yourself.</p>
+      <ul>
+        <li>Deletion from the live game database is immediate and permanent.</li>
+        <li>Your balances, transaction history, rackets, Heat, streaks, cooldowns and stored command outcomes are removed together.</li>
+        <li>Server settings remain. Database audit records keep the change itself, but replace your Discord ID with an anonymous placeholder.</li>
+        <li>Existing Discord messages and existing backup copies are not edited by <code>/forgetme</code>.</li>
+      </ul>
+      <p>Backups are retained according to the active backup-rotation schedule, then expire when that backup is removed. If you no longer share a server with Underworld, or need a copy of your data, use the support route below.</p>
+
+      <h2>Metrics and operational logs</h2>
+      <p>Underworld's local operator metrics can show installation, retention and activity summaries by server. They do not include player IDs, player names, balances, command arguments or message content.</p>
+      <p>Limited runtime diagnostics may be retained by our hosting provider when an error occurs. They can include Discord user, server or channel IDs needed to diagnose the error. We do not intentionally log message content, display names, command arguments, balances or tokens.</p>
+
+      <h2>Website analytics</h2>
+      <p>Our public website uses Plausible Analytics to measure aggregate page visits and clicks on the “Add Underworld” and “Join Discord Server” buttons. Plausible does not use cookies or persistent identifiers, does not store raw IP addresses, and does not track people across sites, devices or days. It receives the page URL, referral source, browser, operating system, device type and approximate location derived from the IP address before that address is discarded. We never send Discord IDs, game data or other account identifiers to Plausible. See <a href="https://plausible.io/data-policy">Plausible's data policy</a>.</p>
+
+      <h2>Sharing and security</h2>
+      <p>Underworld does not send game data to advertising or data-broker services. It communicates with Discord to run the bot and deliver its messages. The database and backups must be kept on encrypted storage, and off-box backups must be encrypted before transfer or storage.</p>
+
+      <h2>Support and privacy requests</h2>
+      <div class="notice">For support, privacy requests, or a copy of your data, join the <a href="/discord/">Underworld support server</a>.</div>
+    </main>
+    <footer>
+      <div class="shell">Underworld is a fictional game. All currency and rewards are virtual and have no real-world value.</div>
+    </footer>
+  </body>
+</html>
