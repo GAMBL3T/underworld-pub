@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Add Underworld, the verified fictional economy game for Discord servers.">
-  <meta name="theme-color" content="#0d0e0f">
+  <meta name="description" content="Underworld is a verified Discord economy game with dirty cash, laundering, rackets, Heat, streaks, and server leaderboards.">
+  <meta name="theme-color" content="#0b0c0d">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Underworld">
   <meta property="og:title" content="Underworld | A criminal economy for your Discord server">
-  <meta property="og:description" content="Earn dirty cash, launder it, build rackets, and keep your Heat under control.">
+  <meta property="og:description" content="Give your community an economy with something to build, risk, and compete over.">
   <meta property="og:url" content="https://joinunderworld.com/">
   <meta property="og:image" content="https://joinunderworld.com/og.png">
   <meta property="og:image:alt" content="Underworld, a criminal economy for your Discord server">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Underworld | A criminal economy for your Discord server">
-  <meta name="twitter:description" content="Earn dirty cash, launder it, build rackets, and keep your Heat under control.">
+  <meta name="twitter:description" content="Give your community an economy with something to build, risk, and compete over.">
   <meta name="twitter:image" content="https://joinunderworld.com/og.png">
   <link rel="canonical" href="https://joinunderworld.com/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -26,8 +26,12 @@
     window.plausible = window.plausible || function () {
       (window.plausible.q = window.plausible.q || []).push(arguments);
     };
+    window.plausible.init = window.plausible.init || function (options) {
+      window.plausible.o = options || {};
+    };
     window.plausible.init();
   </script>
+  <script src="site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -39,200 +43,233 @@
         <span>Underworld</span>
       </a>
       <nav aria-label="Primary navigation">
-        <a href="#how-it-works">How it works</a>
-        <a href="#features">Features</a>
+        <a href="#game">The game</a>
+        <a href="#commands">Commands</a>
+        <a href="#founders">Founders</a>
         <a class="plausible-event-name=Join+Discord+Server" href="/discord/" target="_blank" rel="noopener noreferrer">Community</a>
-        <a href="terms.html">Terms</a>
-        <a href="privacy.html">Privacy</a>
       </nav>
-      <a class="header-cta plausible-event-name=Add+Bot+Click" href="/invite/" target="_blank" rel="noopener noreferrer">Add to Discord</a>
+      <a class="header-cta plausible-event-name=Add+Bot+Click" href="/invite/" target="_blank" rel="noopener noreferrer">Install free</a>
     </div>
   </header>
 
   <main id="main">
     <section class="hero shell">
       <div class="hero-copy">
-        <p class="verified-label"><span aria-hidden="true"></span> Verified Discord app</p>
-        <h1>Your server’s<br>criminal economy.</h1>
-        <p class="lede">Underworld gives every Discord server its own persistent economy. Make dirty cash, clean it up, build passive income, and stay ahead of the Heat.</p>
+        <p class="verified-line"><span aria-hidden="true">✓</span> Verified Discord app</p>
+        <h1>Give your server<br>something to run.</h1>
+        <p class="hero-lede">Underworld is a persistent economy game built for Discord communities. Members make dirty cash, launder it, buy rackets, manage Heat, and compete inside your server.</p>
         <div class="hero-actions">
-          <a class="button button-primary plausible-event-name=Add+Bot+Click" href="/invite/" target="_blank" rel="noopener noreferrer">Add Underworld</a>
-          <a class="button button-quiet" href="#how-it-works">See how it works</a>
+          <a class="button button-primary plausible-event-name=Add+Bot+Click" href="/invite/" target="_blank" rel="noopener noreferrer"><span>Install Underworld free</span><span aria-hidden="true">↗</span></a>
+          <a class="text-link plausible-event-name=Join+Discord+Server" href="/discord/" target="_blank" rel="noopener noreferrer">Visit the official server</a>
         </div>
-        <ul class="trust-list" aria-label="Key assurances">
-          <li>Free to play</li>
-          <li>No purchases</li>
-          <li>Progress stays in your server</li>
-        </ul>
+        <p class="install-note">Takes less than a minute. Choose your server in Discord.</p>
       </div>
 
-      <div class="product-preview" aria-label="Example Underworld command response">
-        <div class="preview-bar">
-          <span class="preview-status"></span>
-          <span># general</span>
-          <span class="preview-app">UNDERWORLD</span>
+      <div class="demo" aria-label="Interactive Underworld command demo">
+        <div class="demo-heading">
+          <div><span class="online-dot" aria-hidden="true"></span><strong>Underworld</strong><small>APP</small></div>
+          <span>Try a command</span>
         </div>
-        <div class="discord-message user-message">
-          <div class="avatar avatar-user" aria-hidden="true">G</div>
-          <div>
-            <div class="message-meta"><strong>Gambler</strong><span>Today at 9:41 PM</span></div>
-            <code>/hustle</code>
+        <div class="demo-tabs" role="tablist" aria-label="Demo commands">
+          <button class="demo-tab active plausible-event-name=Demo+Command" type="button" role="tab" aria-selected="true" aria-controls="demo-panel" data-demo="hustle">/hustle</button>
+          <button class="demo-tab plausible-event-name=Demo+Command" type="button" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="launder">/launder</button>
+          <button class="demo-tab plausible-event-name=Demo+Command" type="button" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="collect">/collect</button>
+          <button class="demo-tab plausible-event-name=Demo+Command" type="button" role="tab" aria-selected="false" aria-controls="demo-panel" tabindex="-1" data-demo="profile">/profile</button>
+        </div>
+        <div class="demo-message" id="demo-panel" role="tabpanel" aria-live="polite">
+          <div class="bot-avatar" aria-hidden="true">U</div>
+          <div class="demo-content">
+            <div class="message-author"><strong>Underworld</strong><span>APP</span><time>Today at 9:41 PM</time></div>
+            <article class="response-card">
+              <p class="response-label" id="demo-label">HUSTLE COMPLETE</p>
+              <h2 id="demo-title">You made $184 dirty.</h2>
+              <p id="demo-body">The job went clean. Your Heat increased by 1.</p>
+              <dl class="response-stats" id="demo-stats">
+                <div><dt>Dirty</dt><dd>$2,460</dd></div>
+                <div><dt>Clean</dt><dd>$1,125</dd></div>
+                <div><dt>Heat</dt><dd>18</dd></div>
+              </dl>
+            </article>
           </div>
         </div>
-        <div class="discord-message bot-message">
-          <div class="avatar avatar-bot" aria-hidden="true">U</div>
-          <div class="message-body">
-            <div class="message-meta"><strong>Underworld</strong><small>APP</small><span>Today at 9:41 PM</span></div>
-            <div class="game-response">
-              <p class="response-kicker">HUSTLE COMPLETE</p>
-              <h2>You made $184 dirty.</h2>
-              <p>The job went clean. Your Heat increased by 1.</p>
-              <div class="balance-row">
-                <span><b>$2,460</b> dirty</span>
-                <span><b>$1,125</b> clean</span>
-                <span><b>18</b> Heat</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="preview-foot">
-          <span>One economy per server</span>
-          <span>Progress saved automatically</span>
-        </div>
+        <div class="demo-caption"><span>Example response</span><span>Your server, your economy</span></div>
       </div>
     </section>
 
-    <section class="fact-strip" aria-label="Underworld at a glance">
-      <div class="shell facts">
-        <div><strong>2</strong><span>currencies</span></div>
-        <div><strong>5</strong><span>rackets to own</span></div>
-        <div><strong>1</strong><span>economy per server</span></div>
-        <div><strong>0</strong><span>pay-to-win purchases</span></div>
+    <div class="principles">
+      <div class="shell principle-row">
+        <span>Free to play</span>
+        <span>No real-money purchases</span>
+        <span>Separate progress in every server</span>
+        <span>Self-service data deletion</span>
+      </div>
+    </div>
+
+    <section class="game-section shell" id="game">
+      <header class="editorial-heading">
+        <p class="section-index">01 / The game</p>
+        <h2>A loop people understand.<br>A system they can master.</h2>
+      </header>
+
+      <div class="economy-flow" aria-label="The Underworld economy loop">
+        <article>
+          <p class="flow-command">/daily · /hustle · /heist</p>
+          <h3>Earn dirty cash</h3>
+          <p>Start with quick jobs, build a streak, and take on an interactive heist when you want higher stakes.</p>
+        </article>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <article>
+          <p class="flow-command">/launder</p>
+          <h3>Turn it clean</h3>
+          <p>Convert dirty money into spendable cash. More Heat means a higher fee, so timing matters.</p>
+        </article>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <article>
+          <p class="flow-command">/buy_racket</p>
+          <h3>Build an operation</h3>
+          <p>Buy five rackets in order, from a Street Corner to a Port Warehouse, and grow your hourly income.</p>
+        </article>
+        <span class="flow-arrow" aria-hidden="true">→</span>
+        <article>
+          <p class="flow-command">/collect · /leaderboard</p>
+          <h3>Come back on top</h3>
+          <p>Collect offline earnings, handle the risk that comes with Heat, and compete against your own server.</p>
+        </article>
       </div>
     </section>
 
-    <section class="section shell" id="how-it-works">
-      <div class="section-heading">
-        <p class="eyebrow">The game loop</p>
-        <h2>Start small. Take over the city.</h2>
-        <p>Members can understand the basics in a minute, while long-term progression gives them a reason to come back.</p>
-      </div>
-      <ol class="steps">
-        <li>
-          <span class="step-number">01</span>
-          <h3>Make dirty cash</h3>
-          <p>Claim your daily cut, run a hustle, or take your chances in a heist.</p>
-          <code>/daily</code> <code>/hustle</code> <code>/heist</code>
-        </li>
-        <li>
-          <span class="step-number">02</span>
-          <h3>Clean it up</h3>
-          <p>Launder dirty cash into clean money. Higher Heat means a higher fee.</p>
-          <code>/launder</code>
-        </li>
-        <li>
-          <span class="step-number">03</span>
-          <h3>Build your operation</h3>
-          <p>Spend clean money on rackets that earn dirty cash while you are away.</p>
-          <code>/buy_racket</code> <code>/collect</code>
-        </li>
-        <li>
-          <span class="step-number">04</span>
-          <h3>Protect your progress</h3>
-          <p>Watch your Heat, manage collection risk, and climb your server’s leaderboard.</p>
-          <code>/heat</code> <code>/leaderboard</code>
-        </li>
-      </ol>
-    </section>
+    <section class="depth-section">
+      <div class="shell">
+        <header class="editorial-heading split-heading">
+          <p class="section-index">02 / Built to last</p>
+          <h2>Simple commands.<br>Real decisions.</h2>
+          <p>Underworld is easy to start and hard to flatten into one obvious strategy.</p>
+        </header>
 
-    <section class="section section-dark" id="features">
-      <div class="shell feature-layout">
-        <div class="section-heading sticky-heading">
-          <p class="eyebrow">Built for communities</p>
-          <h2>More than another balance command.</h2>
-          <p>Underworld is designed to create friendly competition and daily activity without turning your server into a casino.</p>
-        </div>
-        <div class="feature-list">
-          <article><span>01</span><div><h3>A real progression loop</h3><p>Dirty and clean cash serve different purposes. Members earn, convert, invest, and grow instead of watching one number go up.</p></div></article>
-          <article><span>02</span><div><h3>Passive racket income</h3><p>Five rackets create a clear path from a street corner to a full operation, with capped offline earnings that reward returning.</p></div></article>
-          <article><span>03</span><div><h3>Heat changes the risk</h3><p>Activity attracts attention. Heat affects laundering fees and collection risk, then decays while players cool off.</p></div></article>
-          <article><span>04</span><div><h3>Daily reasons to return</h3><p>Streaks, return bonuses, server leaderboards, and profile milestones keep progression moving without constant grinding.</p></div></article>
-          <article><span>05</span><div><h3>Tools for server staff</h3><p>Manage Server controls let staff disable the economy, configure audit notices, and see Founding Server progress.</p></div></article>
-          <article><span>06</span><div><h3>Privacy controls included</h3><p>Members can remove their stored game data with <code>/forgetme</code>. Underworld does not sell data or store message content.</p></div></article>
+        <div class="depth-list">
+          <article>
+            <div class="depth-number">5</div>
+            <div><p class="depth-kicker">Rackets</p><h3>Income that keeps moving when Discord is quiet.</h3><p>Each racket has its own price and hourly rate. Earnings accrue while members are away, capped at eight hours so checking in still matters.</p></div>
+          </article>
+          <article>
+            <div class="depth-number">100</div>
+            <div><p class="depth-kicker">Heat</p><h3>Success creates pressure.</h3><p>Heat runs from 0 to 100. It raises laundering fees and collection risk, then decays naturally when players cool off.</p></div>
+          </article>
+          <article>
+            <div class="depth-number">14</div>
+            <div><p class="depth-kicker">Daily streak</p><h3>A reason to return without a grind wall.</h3><p>Daily rewards grow across a two-week streak, with a return bonus for members coming back after time away.</p></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="section shell command-section">
-      <div class="section-heading">
-        <p class="eyebrow">Commands</p>
-        <h2>Everything players need, nothing they don’t.</h2>
+    <section class="commands-section shell" id="commands">
+      <header class="editorial-heading split-heading">
+        <p class="section-index">03 / Commands</p>
+        <h2>No manual needed.</h2>
+        <p>Members can start with three commands. Everything else opens up as their operation grows.</p>
+      </header>
+
+      <div class="command-directory">
+        <div class="command-group">
+          <p>Start here</p>
+          <div><code>/daily</code><span>Claim your cut and build a streak</span></div>
+          <div><code>/hustle</code><span>Make quick dirty cash</span></div>
+          <div><code>/balance</code><span>Check dirty and clean money</span></div>
+        </div>
+        <div class="command-group">
+          <p>Build</p>
+          <div><code>/launder</code><span>Convert dirty cash into clean</span></div>
+          <div><code>/buy_racket</code><span>Purchase the next operation</span></div>
+          <div><code>/collect</code><span>Take your offline earnings</span></div>
+        </div>
+        <div class="command-group">
+          <p>Compete</p>
+          <div><code>/heist</code><span>Play the interactive high-risk job</span></div>
+          <div><code>/profile</code><span>See progress, streaks, and badges</span></div>
+          <div><code>/leaderboard</code><span>Rank players in your server</span></div>
+        </div>
       </div>
-      <div class="command-grid" aria-label="Underworld command list">
-        <div><code>/daily</code><span>Claim a daily cut and build a streak</span></div>
-        <div><code>/hustle</code><span>Make quick dirty cash</span></div>
-        <div><code>/heist</code><span>Play the interactive high-risk job</span></div>
-        <div><code>/launder</code><span>Convert dirty cash into clean money</span></div>
-        <div><code>/rackets</code><span>Review your operation and income</span></div>
-        <div><code>/collect</code><span>Collect your offline racket earnings</span></div>
-        <div><code>/profile</code><span>See progress, streaks, and badges</span></div>
-        <div><code>/leaderboard</code><span>Compete with players in your server</span></div>
-      </div>
-      <p class="command-note">Run <code>/help</code> inside Discord for the complete command guide, live odds, and current game rules.</p>
+      <p class="directory-note">The in-bot <code>/help</code> command always shows the complete command list, current odds, and live game rules.</p>
     </section>
 
-    <section class="section shell founder-callout">
-      <div><p class="eyebrow">Early access recognition</p><h2>Build one of the first 100 Founding Servers.</h2></div>
-      <div><p>Three different members must each complete a successful economy action. Qualified communities receive numbered Founding Server status while Underworld remains installed.</p><p class="fine-print">Founding status is cosmetic. It does not change rewards, odds, cooldowns, or progression.</p></div>
-    </section>
-
-    <section class="section shell community-section">
-      <div class="community-copy">
-        <p class="eyebrow">Official community</p>
-        <h2>Need help or want a say in what comes next?</h2>
-        <p>Join the official server for support, updates, bug reports, suggestions, and a place to meet other Underworld communities.</p>
-        <a class="button button-secondary plausible-event-name=Join+Discord+Server" href="/discord/" target="_blank" rel="noopener noreferrer">Join the Discord server</a>
-      </div>
-      <div class="community-board" aria-label="What you can find in the Underworld community">
-        <div><span>SUPPORT</span><p>Get setup help directly from the team.</p></div>
-        <div><span>UPDATES</span><p>See new features and balance changes first.</p></div>
-        <div><span>FEEDBACK</span><p>Help shape Underworld while it is still growing.</p></div>
+    <section class="founder-section" id="founders">
+      <div class="shell founder-grid">
+        <div class="founder-seal" aria-hidden="true"><span>100</span><small>FOUNDING<br>SERVERS</small></div>
+        <div>
+          <p class="section-index">For the early communities</p>
+          <h2>Founding Server status is earned, not bought.</h2>
+          <p>Three different members must each complete a successful economy action. The first 100 qualifying communities receive numbered recognition while Underworld remains installed.</p>
+          <ul>
+            <li>Visible on your server’s leaderboard</li>
+            <li>No paid shortcut</li>
+            <li>No gameplay advantage</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="section shell faq-section">
-      <div class="section-heading"><p class="eyebrow">Questions</p><h2>Before you add it.</h2></div>
+    <section class="owner-section shell">
+      <header class="editorial-heading">
+        <p class="section-index">04 / For server staff</p>
+        <h2>Your members get the game.<br>You keep the controls.</h2>
+      </header>
+      <div class="owner-grid">
+        <article><h3>Verified by Discord</h3><p>Underworld has completed Discord’s app verification process.</p></article>
+        <article><h3>Server-level settings</h3><p>Manage Server controls cover the economy switch, collection risk, and audit notices.</p></article>
+        <article><h3>Privacy by default</h3><p>No message content is stored. Members can erase their game data with <code>/forgetme</code>.</p></article>
+        <article><h3>No monetized economy</h3><p>No purchases, premium currency, paid boosts, trading, or real-world value.</p></article>
+      </div>
+    </section>
+
+    <section class="community-section">
+      <div class="shell community-grid">
+        <div class="community-copy">
+          <p class="section-index">Official community</p>
+          <h2>Talk to the people building it.</h2>
+          <p>Get setup help, report a bug, suggest a feature, follow updates, or find another community already playing Underworld.</p>
+          <a class="button button-discord plausible-event-name=Join+Discord+Server" href="/discord/" target="_blank" rel="noopener noreferrer"><span>Join the official server</span><span aria-hidden="true">↗</span></a>
+          <p class="community-note">Support is run directly through the official Underworld Discord.</p>
+        </div>
+        <div class="widget-wrap">
+          <iframe src="https://discord.com/widget?id=1539761404016463912&amp;theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" title="Underworld official Discord server"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section shell">
+      <header class="editorial-heading"><p class="section-index">05 / Before you install</p><h2>The important answers.</h2></header>
       <div class="faq-list">
-        <details><summary>Is Underworld free?</summary><p>Yes. There are no purchases, subscriptions, paid boosts, or pay-to-win benefits.</p></details>
-        <details><summary>Does progress carry between servers?</summary><p>No. Every Discord server has its own independent economy, balances, leaderboards, and progression.</p></details>
-        <details><summary>Is any real money involved?</summary><p>No. All currency and rewards are fictional. They cannot be bought, sold, traded, transferred, or exchanged for anything of real-world value.</p></details>
-        <details><summary>What permissions does the bot need?</summary><p>The installer needs Manage Server. Underworld requests the Discord permissions needed to view and send messages, embed links, read message history, and register application commands.</p></details>
-        <details><summary>Can members delete their data?</summary><p>Yes. Members can run <code>/forgetme</code> and choose whether to remove their data from one server or every server.</p></details>
+        <details><summary>Is Underworld free?</summary><p>Yes. There are no purchases, subscriptions, premium tiers, paid boosts, or pay-to-win benefits.</p></details>
+        <details><summary>Does progress carry between servers?</summary><p>No. Every server has an independent economy, balances, progression, and leaderboard.</p></details>
+        <details><summary>Is this a gambling bot?</summary><p>No. Underworld uses fictional currency with no real-world value. Nothing can be bought, sold, traded, transferred, or cashed out.</p></details>
+        <details><summary>What does the bot store?</summary><p>Discord IDs and the game state needed to keep progress working. Underworld does not store message content, usernames, email addresses, or payment details. Read the <a href="privacy.html">Privacy Policy</a> for the full explanation.</p></details>
+        <details><summary>What permission do I need to add it?</summary><p>You need Manage Server in the Discord server where you want to install Underworld.</p></details>
       </div>
     </section>
 
     <section class="final-cta">
-      <div class="shell final-cta-inner">
-        <p class="eyebrow">The city is open</p>
-        <h2>Give your server an economy worth playing.</h2>
-        <p>Add Underworld in under a minute. Your members can start with <code>/daily</code>.</p>
-        <a class="button button-primary plausible-event-name=Add+Bot+Click" href="/invite/" target="_blank" rel="noopener noreferrer">Add Underworld to Discord</a>
+      <div class="shell final-cta-grid">
+        <div><p class="section-index">Ready when you are</p><h2>Start your server’s economy.</h2></div>
+        <div class="final-action">
+          <a class="button button-inverse plausible-event-name=Add+Bot+Click" href="/invite/" target="_blank" rel="noopener noreferrer"><span>Install Underworld free</span><span aria-hidden="true">↗</span></a>
+          <p>Discord opens next so you can choose your server.</p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="shell footer-grid">
-      <div>
-        <a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true">U</span><span>Underworld</span></a>
-        <p>A fictional economy game for Discord communities.</p>
-      </div>
-      <div class="footer-links">
-        <div><strong>Underworld</strong><a class="plausible-event-name=Add+Bot+Click" href="/invite/" target="_blank" rel="noopener noreferrer">Add the bot</a><a class="plausible-event-name=Join+Discord+Server" href="/discord/" target="_blank" rel="noopener noreferrer">Official Discord</a></div>
-        <div><strong>Legal</strong><a href="terms.html">Terms of Use</a><a href="privacy.html">Privacy Policy</a></div>
-      </div>
+    <div class="shell footer-main">
+      <div><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">U</span><span>Underworld</span></a><p>A fictional economy game for Discord communities.</p></div>
+      <div class="footer-links"><a class="plausible-event-name=Add+Bot+Click" href="/invite/" target="_blank" rel="noopener noreferrer">Install</a><a class="plausible-event-name=Join+Discord+Server" href="/discord/" target="_blank" rel="noopener noreferrer">Community</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div>
     </div>
-    <div class="shell footer-bottom"><span>Underworld is a verified Discord app.</span><span>All currency and rewards are fictional.</span></div>
+    <div class="shell footer-bottom"><span>Verified Discord app</span><span>All currency and rewards are fictional.</span></div>
   </footer>
+
+  <div class="mobile-install" aria-label="Install Underworld">
+    <div><strong>Underworld</strong><span>Free · Verified</span></div>
+    <a class="plausible-event-name=Add+Bot+Click" href="/invite/" target="_blank" rel="noopener noreferrer">Install</a>
+  </div>
 </body>
 </html>
