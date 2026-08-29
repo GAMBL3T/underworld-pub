@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Underworld's privacy policy.">
+    <meta name="theme-color" content="#0d0e0f">
+    <link rel="canonical" href="https://joinunderworld.com/privacy.html">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <title>Privacy · Underworld</title>
     <link rel="stylesheet" href="site.css">
     <!-- Privacy-friendly analytics by Plausible -->
@@ -16,13 +19,16 @@
     </script>
   </head>
   <body>
-    <header>
+    <header class="site-header">
       <div class="shell topbar">
-        <a class="brand" href="index.html">Underworld</a>
+        <a class="brand" href="/" aria-label="Underworld home"><span class="brand-mark" aria-hidden="true">U</span><span>Underworld</span></a>
         <nav aria-label="Primary navigation">
+          <a href="/">Home</a>
           <a href="terms.html">Terms</a>
           <a aria-current="page" href="privacy.html">Privacy</a>
+          <a class="plausible-event-name=Join+Discord+Server" href="/discord/" target="_blank" rel="noopener noreferrer">Community</a>
         </nav>
+        <a class="header-cta plausible-event-name=Add+Bot+Click" href="/invite/" target="_blank" rel="noopener noreferrer">Add to Discord</a>
       </div>
     </header>
     <main class="shell">
@@ -49,7 +55,7 @@
       <h2>Discord messages and operator records</h2>
       <p>Underworld sends normal game responses to Discord. Those messages can show the current Discord display name of the person using a command. We do not store usernames, nicknames or display names in Underworld's database.</p>
       <p>If a server enables Underworld's audit channel, configuration notices include the current display name of the administrator who made the change. Those notices are messages in that server's Discord channel, not database records. Deleting your data anonymizes your database audit record, but does not edit or delete messages already retained by Discord in a server's audit channel.</p>
-      <p>Underworld can also send a limited join or removal notice to a private operator channel in the official Underworld server. It may include the server name, server ID, member count when Discord provides it, event type, timestamp and, on a join, the current server owner ID. This channel is restricted to Underworld operators and is used to monitor installs and removals.</p>
+      <p>Underworld can also send a limited join or removal notice to a private operator channel in the official Underworld server. It may include the server name, server ID, member count when Discord provides it, event type, timestamp and whether the welcome message was delivered. It does not include the server owner ID. This channel is restricted to Underworld operators and is used to monitor installs and removals.</p>
 
       <h2>What we do not store in the game database</h2>
       <p>We do not store message content, usernames, nicknames, avatars, email addresses, IP addresses, payment details, or activity outside Underworld commands.</p>
@@ -77,8 +83,6 @@
       <h2>Support and privacy requests</h2>
       <div class="notice">For support, privacy requests, or a copy of your data, join the <a href="/discord/">Underworld support server</a>.</div>
     </main>
-    <footer>
-      <div class="shell">Underworld is a fictional game. All currency and rewards are virtual and have no real-world value.</div>
-    </footer>
+    <footer><div class="shell footer-bottom"><span>Underworld is a verified Discord app.</span><span><a href="terms.html">Terms</a> · <a href="/discord/">Support</a></span></div></footer>
   </body>
 </html>
