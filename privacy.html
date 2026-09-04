@@ -35,7 +35,7 @@
       </div>
     </header>
     <main class="shell">
-      <p class="eyebrow">Last updated August 25, 2026</p>
+      <p class="eyebrow">Last updated September 3, 2026</p>
       <h1>Your data,<br>without the fog.</h1>
       <p class="lede">Underworld stores the data needed to run a persistent, server-by-server game. We do not store the content of your messages.</p>
 
@@ -76,6 +76,12 @@
       <h2>Metrics and operational logs</h2>
       <p>Underworld's local operator metrics can show installation, retention and activity summaries by server. They do not include player IDs, player names, balances, command arguments or message content.</p>
       <p>Limited runtime diagnostics may be retained by our hosting provider when an error occurs. They can include Discord user, server or channel IDs needed to diagnose the error. We do not intentionally log message content, display names, command arguments, balances or tokens.</p>
+
+      <h2>Optional daily reminders</h2>
+      <p>Reminders are off unless you enable them. We store your Discord user ID, the server IDs you enable reminders for, your preferences, and the scheduling and delivery state needed to send reminders without repeating them. Reminders for several servers may be combined into one Discord DM. Scheduling uses your game timestamps, not your online status or activity outside Underworld.</p>
+      <p>A separate reminder delivery log stores only your Discord user ID, the delivery-attempt time, and the outcome (sent, failed or blocked). It does not contain DM text, server or channel IDs, names, balances, or command arguments. Underworld operators use these records to troubleshoot reminder delivery. Records older than 30 days are removed during daily cleanup.</p>
+      <p>You can disable reminders for one server or all servers. Disabling reminders clears the selected preferences and pending reminders; existing delivery logs remain until they expire or you delete your data. Running <code>/forgetme</code> removes reminder preferences and pending reminders within your chosen deletion scope, plus all reminder delivery logs linked to your user ID, even if you choose just one server. Other servers where reminders remain enabled may generate new delivery logs.</p>
+      <p>Removing records from the live database does not delete DMs already delivered through Discord or edit existing backup copies. The backup-retention explanation above also applies to reminder records. These records are not sent to Plausible or posted in public Discord channels.</p>
 
       <h2>Website analytics</h2>
       <p>Our public website uses Plausible Analytics to measure aggregate page visits and clicks on the “Add Underworld” and “Join Discord Server” buttons. Plausible does not use cookies or persistent identifiers, does not store raw IP addresses, and does not track people across sites, devices or days. It receives the page URL, referral source, browser, operating system, device type and approximate location derived from the IP address before that address is discarded. We never send Discord IDs, game data or other account identifiers to Plausible. See <a href="https://plausible.io/data-policy">Plausible's data policy</a>.</p>
